@@ -43,7 +43,7 @@ userRouter.post("/register", async (req, res) => {
                 if (err) {
                   res.status(200).send({ message: "please enter correct password" });
                 } else {
-                  const token = jwt.sign({ author: user.name , authorId:user.id }, "secret"); //author details we are sending here as payload so that we can use it in thge notes routes via auth middleware
+                  const token = jwt.sign({ author: user.name , authorId:user.id }, "secret"); //author details we are sending here as payload so that we can use it in the notes routes via auth middleware
                   res.status(200).send({ message: "login successful", token: token });
                 }
               });
